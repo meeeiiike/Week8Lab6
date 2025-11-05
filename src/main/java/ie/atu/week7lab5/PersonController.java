@@ -25,9 +25,15 @@ public class PersonController {
         return personService.findAll();
     }
 
-    @GetMapping("/{id}")
-    public Person findByEmployeeId(@PathVariable String id) {
-        return personService.findByEmployeeId(id);
+    @GetMapping("/{employeeId}")
+    public Person findByEmployeeId(@PathVariable String employeeId) {
+        return personService.findByEmployeeId(employeeId);
     }
 
+    /*
+    @PutMapping("/{employeeId}")
+    public Person update(@PathVariable String employeeId, @RequestBody Person person) {
+        return personService.update(person);
+    }
+     */
 }
