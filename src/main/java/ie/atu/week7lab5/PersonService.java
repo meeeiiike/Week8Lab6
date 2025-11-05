@@ -1,6 +1,5 @@
 package ie.atu.week7lab5;
 
-import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,9 +25,13 @@ public class PersonService {
         return personRepository.findByEmployeeId(id).orElseThrow(() -> new IllegalArgumentException("Person with id " + id + " not found"));
     }
 
-    /*
-    public Person update(Person person) {
-        return personRepository.p(person);
+    public Person update(String employeeId, Person person) {
+        Person updatedPerson = personRepository.findByEmployeeId(employeeId).orElseThrow(() -> new IllegalArgumentException("Person with id " + employeeId + " not found"));
+        updatedPerson.setName(person.getName());
+        updatedPerson.setEmail(person.getEmail());
+        updatedPerson.setPosition(person.getPosition());
+        updatedPerson.setDepartment(person.getDepartment());
+        return personRepository.save(updatedPerson);
     }
-     */
+
 }
