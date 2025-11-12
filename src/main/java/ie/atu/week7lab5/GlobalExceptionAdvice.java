@@ -14,9 +14,11 @@ public class GlobalExceptionAdvice {
     public Map<String, String> handleNotFound(IllegalArgumentException iae) {
         return Map.of("error", iae.getMessage());
     }
+    /*
     @ExceptionHandler(IllegalArgumentException.class)
     @ResponseStatus(HttpStatus.CONFLICT)
     public Map<String, String> idAlreadyExists(IllegalArgumentException iae) {
         return Map.of("error", iae.getMessage());
     }
+     */
 }
