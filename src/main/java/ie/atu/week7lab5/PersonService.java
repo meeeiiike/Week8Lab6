@@ -37,6 +37,5 @@ public class PersonService {
     public void delete(String employeeId) {
         Person toDelete = personRepository.findByEmployeeId(employeeId).orElseThrow(() -> new IllegalArgumentException("Person with id " + employeeId + " not found"));
         personRepository.delete(toDelete);
-
     }
 }
